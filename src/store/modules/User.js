@@ -10,18 +10,27 @@ const namespaced = true;
 */
 
 const state = {
-  user: undefined,
+  user: {
+    userCart: [],
+    userEmail: "ake",
+    userHistory: [],
+    userId: 3,
+    userName: "ake",
+    userWishlist: [],
+    isAuth: true,
+  },
 };
 const getters = {
   STATE: (s) => s.user,
+  INFO: (s) => s.user
 };
 const mutations = {
-SET_USER: (state, data) => {
-  state.user = data
-}
+  SET_USER: (state, data) => {
+    state.user = data
+  }
 };
 const actions = {
-  
+
 };
 export default {
   name,

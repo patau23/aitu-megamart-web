@@ -26,12 +26,11 @@ export default defineConfig({
     port: 2077,
     proxy: {
       '/api': {
-        target: 'https://adbfinal.azurewebsites.net',
+        target: 'https://megamart.azurewebsites.net',
         changeOrigin: true,
         secure: false
-        // rewrite: (path) => path.replace(/^\/api/, ''),
       },
-      '/swagger': `http://adbfinal.azurewebsites.net/api`,
+      '/swagger': `https://megamart.azurewebsites.net/api`,
     },
   }
 })

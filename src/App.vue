@@ -33,39 +33,7 @@ export default {
       USER: "User/STATE",
     }),
   },
-  async mounted() {
-    // правильный:
-    // const resposne = await axios.post(
-    //   "http://localhost:2077" + "/api/Auth/Register",
-    //   {
-    //     userName: "borya",
-    //     userPassword: "ake123123",
-    //     userEmail: "boray",
-    //   },
-    //   {
-    //     // params: {
-    //     //   UserId: 5,
-    //     // },
-    //     headers: {
-    //       "Access-Control-Allow-Origin": "*",
-    //     },
-    //   }
-    // );
-    //
-    //
-    // console.log(resposne);
-    // const resposne = await fetch(
-    //   "http://localhost:2077" + "/api/Auth/DeleteUser",
-    //   {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //       userName: "ake",
-    //       userPassword: "ake",
-    //       userEmail: "ake",
-    //     }),
-    //   }
-    // );
-  },
+  async mounted() {},
   methods: {},
 };
 </script>

@@ -111,6 +111,16 @@
     </div>
     <div v-if="USER.isAuth" class="similar">
       <h2>Others users like</h2>
+      <div class="d-flex flex-row flex-wrap mb-6">
+        <ProductCard
+          v-for="product in prods"
+          :key="product._id"
+          :productEntity="product"
+          @open-product="openProduct($event)"
+          @add-to-cart="addToCart($event)"
+          @add-to-wishlist="addToWishlist($event)"
+        />
+      </div>
     </div>
   </v-sheet>
 </template>
@@ -128,6 +138,41 @@ export default {
       modal: false,
       exactProduct: {},
       rating: 4.5,
+      prods: [
+        {
+          _id: "6554dff70d473f892624934b",
+          productCategoryID: 1,
+          productDescription:
+            "Натуральное молоко, богатое кальцием и витаминами.",
+          productId: 1,
+          productImage:
+            "https://utfs.io/f/c50c0998-936b-4dc2-931f-2ee79d158cc9-wwxj2q.5.jpg",
+          productName: "Молоко Мое 2.5%",
+          productPrice: 670,
+        },
+        {
+          _id: "6554dff70d473f892624934b",
+          productCategoryID: 1,
+          productDescription:
+            "Натуральное молоко, богатое кальцием и витаминами.",
+          productId: 1,
+          productImage:
+            "https://utfs.io/f/c50c0998-936b-4dc2-931f-2ee79d158cc9-wwxj2q.5.jpg",
+          productName: "Молоко Мое 2.5%",
+          productPrice: 670,
+        },
+        {
+          _id: "6554dff70d473f892624934b",
+          productCategoryID: 1,
+          productDescription:
+            "Натуральное молоко, богатое кальцием и витаминами.",
+          productId: 1,
+          productImage:
+            "https://utfs.io/f/c50c0998-936b-4dc2-931f-2ee79d158cc9-wwxj2q.5.jpg",
+          productName: "Молоко Мое 2.5%",
+          productPrice: 670,
+        },
+      ],
     };
   },
   computed: {

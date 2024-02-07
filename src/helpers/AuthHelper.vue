@@ -1,5 +1,3 @@
-<template></template>
-
 <script>
 import { mapActions } from "vuex";
 export default {
@@ -12,11 +10,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions({
-      
-    }),
+    ...mapActions({}),
   },
 };
 </script>
-
-<style lang="scss" scoped></style>

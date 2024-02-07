@@ -5,7 +5,7 @@ const namespaced = true;
 
 const state = {
   loading: false,
-  isAuth: false,
+  isAuth: true,
   userId: null,
 };
 const getters = {

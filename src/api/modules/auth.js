@@ -56,7 +56,7 @@ export default {
       }
     )
   },
-  giveAdminPassForUser: ({ adminId, newAdminId }) => {
+  giveAdminRoleForUser: ({ adminId, newAdminId }) => {
     return request.execute(
       'put',
       '/Auth/Admin_Create_Admin',
