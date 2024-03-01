@@ -4,28 +4,26 @@
       <v-container class="" dense fill-height fluid>
         <v-row align="center" justify="center">
           <v-col cols="auto">
-            <v-btn icon="mdi-menu" @click="drawer = !drawer"> </v-btn>
+            <v-btn icon="mdi-menu" @click="appDrawer = !appDrawer"> </v-btn>
           </v-col>
           <v-col cols="auto">
             <v-btn icon="mdi-home" :to="'/'"> </v-btn>
           </v-col>
           <v-spacer></v-spacer>
           <v-col cols="9">
-            <Header />
+            <!-- HEADER -->
           </v-col>
         </v-row>
       </v-container>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" color="#F3F3F3">
+    <v-navigation-drawer v-model="appDrawer" color="#F3F3F3">
       <div class="d-flex flex-column">
-        <v-chip v-for="product in historyList">
-          {{ product.productName }}
-        </v-chip>
+        <!--  -->
       </div>
     </v-navigation-drawer>
     <v-main height="100%">
       <v-container
-        v-if="!loading"
+        v-if="!appLoading"
         class="d-flex flex-column align-center"
         :fluid="true"
       >
@@ -36,18 +34,15 @@
 </template>
 
 <script>
-import Header from "../components/custom/Header.vue";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "DefaultLayout",
-  components: {
-    Header,
-  },
+  components: {},
   data: () => {
     return {
-      loading: false,
-      drawer: false,
+      appLoading: false,
+      appDrawer: false,
       historyList: [],
     };
   },

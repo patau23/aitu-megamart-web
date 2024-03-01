@@ -1,7 +1,7 @@
 <template>
   <auth-helper />
   <products-helper />
-  <div v-if="!loading">
+  <div v-if="!initLoading">
     <component :is="'default-layout'">
       <router-view />
     </component>
@@ -13,19 +13,23 @@
 <script>
 import Default from "./layouts/default.vue";
 import AuthHelper from "./helpers/AuthHelper.vue";
+import adminLayout from "./layouts/adminLayout.vue";
 import ProductsHelper from "./helpers/ProductsHelper.vue";
 import { mapGetters, mapActions } from "vuex";
+
+import Api from "./api/index";
 
 export default {
   name: "App",
   components: {
     "default-layout": Default,
-    AuthHelper,
+    "admin-layout": adminLayout,
     ProductsHelper,
+    AuthHelper,
   },
   data: () => {
     return {
-      loading: false,
+      initLoading: false,
     };
   },
   computed: {
@@ -33,7 +37,10 @@ export default {
       USER: "User/STATE",
     }),
   },
-  async mounted() {},
+  created() {},
+  async mounted() {
+    const response = await Api.admin.getAllUsers();
+  },
   methods: {},
 };
 </script>

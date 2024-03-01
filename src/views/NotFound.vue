@@ -4,6 +4,8 @@
     <span class="bold">
       u can go to
       <router-link class="bolded-link" to="/">home page</router-link>
+      or u can go back:
+      <button class="back-btn" @click="$router.go(-1)">GO BACK</button>
     </span>
   </div>
 </template>

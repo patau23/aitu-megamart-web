@@ -9,7 +9,7 @@
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" color="#F3F3F3">
       <div class="d-flex flex-column">
-        <!--  -->
+        <!-- HEADER -->
       </div>
     </v-navigation-drawer>
     <v-main height="100%">
@@ -25,19 +25,20 @@
 </template>
 
 <script>
-import Header from "../components/custom/Header.vue";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "DefaultLayout",
-  components: {
-    Header,
-  },
+  components: {},
   data: () => {
-    return {};
+    return {
+      adminAppLoading: false,
+      adminDrawer: true,
+    };
   },
   computed: {},
-  async mounted() {},
+  created() {},
+  mounted() {},
   methods: {},
 };
 </script>

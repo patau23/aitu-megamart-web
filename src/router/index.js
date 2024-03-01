@@ -14,7 +14,7 @@ const routes = [
   {
     path: '/search/:query',
     name: 'Страница поиска',
-    component: () => import('../views/Search.vue'),
+    component: () => import('../views/SearchResults.vue'),
     meta: {
       power: {
         isAdminWatch: false
@@ -28,6 +28,16 @@ const routes = [
     meta: {
       power: {
         isAdminWatch: false
+      }
+    }
+  },
+  {
+    path: '/admin',
+    name: 'admin panel',
+    component: () => import('../views/Admin.vue'),
+    meta: {
+      power: {
+        isAdminWatch: true,
       }
     }
   },

@@ -1,33 +1,3 @@
-# vue-train
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
 Entities:
 
 product entity {
@@ -49,4 +19,15 @@ ProductEntity1 = {
   productImage:"https://utfs.io/f/c50c0998-936b-4dc2-931f-2ee79d158cc9-wwxj2q.5.jpg"
   productName:"Молоко Мое 2.5%"
   productPrice:670
+}
+
+<!-- USER ENTITY -->
+
+user entity {
+  userCart: []
+  userEmail: "ake"
+  userHistory: []
+  userId: 3
+  userName: "ake"
+  userWishlist: []
 }
