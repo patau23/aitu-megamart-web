@@ -17,9 +17,9 @@ import adminLayout from "./layouts/adminLayout.vue";
 import ProductsHelper from "./helpers/ProductsHelper.vue";
 import { mapGetters, mapActions } from "vuex";
 
-import Api from "./api/index";
 
 export default {
+  setup() {},
   name: "App",
   components: {
     "default-layout": Default,
@@ -38,9 +38,6 @@ export default {
     }),
   },
   created() {},
-  async mounted() {
-    const response = await Api.admin.getAllUsers();
-  },
   methods: {},
 };
 </script>
