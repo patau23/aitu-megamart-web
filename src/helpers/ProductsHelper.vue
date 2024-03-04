@@ -1,3 +1,4 @@
+<template></template>
 <script>
 import { mapActions, mapGetters } from "vuex";
 export default {
@@ -11,7 +12,7 @@ export default {
   },
   async created() {
     if (this.PRODUCTS.all.length <= 0) {
-      console.log("сработал продукт хелпер");
+      // console.log("сработал продукт хелпер");
       // await this.GET_ALL_PRODUCTS();
     }
   },

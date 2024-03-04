@@ -11,14 +11,15 @@ const namespaced = true;
 
 const state = {
   user: {
-    userCart: [],
-    userEmail: "ake",
-    userHistory: [],
-    userId: 3,
-    userName: "ake",
-    userWishlist: [],
-    isAuth: true,
+    // userCart: [],
+    // userEmail: "ake",
+    // userHistory: [],
+    // userId: 3,
+    // userName: "ake",
+    // userWishlist: [],
+    // isAuth: true,
   },
+  isAuth: false,
 };
 const getters = {
   STATE: (s) => s.user,
@@ -27,10 +28,14 @@ const getters = {
 const mutations = {
   SET_USER: (state, data) => {
     state.user = data
+    state.isAuth = true
   }
 };
 const actions = {
-
+  SET_USER: async ({ commit, dispatch }, user) => {
+    console.log(user)
+    commit('SET_USER', user)
+  }
 };
 export default {
   name,

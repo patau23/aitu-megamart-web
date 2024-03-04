@@ -1,7 +1,8 @@
 <template>
   <auth-helper />
   <products-helper />
-  <div v-if="!initLoading">
+  <AppLoader v-if="!initLoading" />
+  <div v-else>
     <component :is="'default-layout'">
       <router-view />
     </component>
@@ -15,17 +16,17 @@ import Default from "./layouts/default.vue";
 import AuthHelper from "./helpers/AuthHelper.vue";
 import adminLayout from "./layouts/adminLayout.vue";
 import ProductsHelper from "./helpers/ProductsHelper.vue";
+import AppLoader from "./components/AppLoader.vue";
 import { mapGetters, mapActions } from "vuex";
 
-
 export default {
-  setup() {},
   name: "App",
   components: {
     "default-layout": Default,
     "admin-layout": adminLayout,
     ProductsHelper,
     AuthHelper,
+    AppLoader,
   },
   data: () => {
     return {
@@ -38,6 +39,12 @@ export default {
     }),
   },
   created() {},
+  mounted() {
+    this.initLoading = true;
+    setTimeout(() => {
+      this.initLoading = false;
+    }, 1500);
+  },
   methods: {},
 };
 </script>

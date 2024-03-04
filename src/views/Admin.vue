@@ -1,6 +1,5 @@
 <template>
   <v-progress-circular v-if="loading" indeterminate></v-progress-circular>
-
   <v-data-table v-else :headers="headers" :items="items" :sort-by="sortBy">
     <template v-slot:top>
       <v-toolbar class="button" flat>
@@ -12,13 +11,13 @@
         <v-dialog v-model="dialog" max-width="500px">
           <template v-slot:activator="{ props }">
             <v-btn color="primary" dark class="mb-2" v-bind="props">
-              New User</v-btn
-            >
+              New User
+            </v-btn>
           </template>
           <v-card>
             <v-card-title>
-              <span class="text-h5">{{ formTitle }}</span></v-card-title
-            >
+              <span class="text-h5">{{ formTitle }}</span>
+            </v-card-title>
             <v-card-text>
               <v-container>
                 <v-row>
@@ -150,9 +149,6 @@ export default {
     };
   },
   computed: {
-    ...mapActions({
-      // START_SESSION_WITH_USER_ID: "Auth/START_SESSION_WITH_USER_ID",
-    }),
     formTitle() {
       return this.editedIndex === -1 ? "Edit Item" : "Edit Item";
     },
@@ -216,8 +212,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.button {
-  background-color: red;
-}
-</style>
+<style lang="scss" scoped></style>

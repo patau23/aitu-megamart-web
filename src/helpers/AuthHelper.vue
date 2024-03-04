@@ -1,16 +1,15 @@
+<template></template>
 <script>
 import { mapActions } from "vuex";
 export default {
-  data: () => {
-    return {};
-  },
   async created() {
-    if (this.$cookies.get("token") || localStorage.getItem("userId")) {
-      console.log("сработал хелпер");
+    const userId = localStorage.getItem("userId");
+    const token = this.$cookies.get("token");
+    if (token || userId) {
       const response = await this.START_SESSION_WITH_USER_ID({
         userId: localStorage.getItem("userId"),
       });
-      console.log(response);
+      console.log("сработал хелпер авторизации: " + response);
     }
   },
   methods: {

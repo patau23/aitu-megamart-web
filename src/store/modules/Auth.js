@@ -29,28 +29,25 @@ const actions = {
   },
 
   START_SESSION_WITH_REGISTER: async ({ dispatch }, { userName, userPassword, userEmail }) => {
-    const response = dispatch('Auth/SIGN_UP_USER', { userName, userPassword, userEmail })
-    dispatch('Auth/START_SESSION_WITH_LOGIN', { userEmail, userPassword })
+    const response = dispatch('SIGN_UP_USER', { userName, userPassword, userEmail })
+    dispatch('START_SESSION_WITH_LOGIN', { userEmail, userPassword })
     return response;
   },
 
   // xD xD xD
   START_SESSION_WITH_LOGIN: async ({ commit, dispatch }, { userEmail, userPassword }) => {
-    const token = dispatch('Auth/SIGN_IN_USER', { userEmail, userPassword })
-    const userId = dispatch('Auth/GET_USER_ID', token)
-    const user = dispatch('Auth/GET_USER_INFO', userId)
-    commit('SET_USER', user)
+    const token = dispatch('SIGN_IN_USER', { userEmail, userPassword })
+    const userId = dispatch('GET_USER_ID', token)
+    const user = dispatch('GET_USER_INFO', userId)
+    dispatch('User/SET_USER', user, { root: true })
     localStorage.setItem('userId', userId)
     localStorage.setItem('token', token)
-    return user
   },
 
   START_SESSION_WITH_USER_ID: async ({ commit, dispatch }, { userId }) => {
-    const user = dispatch('Auth/GET_USER_INFO', userId)
-    commit('SET_USER', user)
+    const user = dispatch('GET_USER_INFO', userId)
+    dispatch('User/SET_USER', user, { root: true })
     localStorage.setItem('userId', userId)
-    localStorage.setItem('token', token)
-    return user
   },
 
   END_SESSION: ({ commit }) => {
